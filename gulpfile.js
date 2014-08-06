@@ -1,16 +1,17 @@
 var gulp = require('gulp');
 var jshint = require('gulp-jshint');
+var config = require('./package.json').buildConfig;
 
 gulp.task('default', function () {
   gulp.start('watch');
 });
 
 gulp.task('lint', function () {
-  var location = ['./gulpfile.js', './app/**/*.js'];
+  var jsLintConfig = config.jslint;
 
-  return gulp.src(location)
+  return gulp.src(config.jslint.files)
     .pipe(jshint())
-    .pipe(jshint.reporter('default'));
+    .pipe(jshint.reporter(config.jslint.reporter));
 });
 
 // Rerun the task when a file changes

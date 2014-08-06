@@ -15,5 +15,14 @@
   "devDependencies": {
     "gulp": "^3.8.7",
     "gulp-jshint": "^1.8.4"
+  },
+  "buildConfig": {
+    "jslint": {
+      "files": [
+        "./gulpfile.js",
+        "./app/**/*.js"
+      ],
+      "reporter": "default"
+    }
   }
 }
