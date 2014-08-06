@@ -13,19 +13,15 @@
   "author": "Christopher Tesene <ctesene@accela.com> (http://www.accela.com/)",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.8.7",
-    "gulp-jshint": "^1.8.4",
     "karma": "^0.12.21",
     "karma-jasmine": "^0.1.5",
-    "karma-phantomjs-launcher": "^0.1.4"
-  },
-  "buildConfig": {
-    "jslint": {
-      "files": [
-        "./gulpfile.js",
-        "./app/**/*.js"
-      ],
-      "reporter": "default"
-    }
+    "karma-phantomjs-launcher": "^0.1.4",
+    "load-grunt-tasks": "^0.6.0",
+    "time-grunt": "^0.4.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "jshint-stylish": "^0.4.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-karma": "^0.8.3"
   }
 }

@@ -1,4 +1,5 @@
+'use strict';
 
-var Automation = {
-
-};
+function App(){
+  Automation.Logger.info('hello world');
+}
