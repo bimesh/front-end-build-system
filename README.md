@@ -1,8 +1,8 @@
-front-end-build-system
+Prerequisites
 ======================
-
-* Get familiar with Gulp
-  * https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md
-* Get familiar with Karma
-  * http://karma-runner.github.io/0.12/intro/installation.html
+[NodeJS](http://nodejs.org/)
+```
+npm install -g grunt-cli
+npm install
+```
     

@@ -15,25 +15,25 @@ module.exports = function (grunt) {
         jshintrc: '.jshintrc',
         reporter: require('jshint-stylish')
       },
-      all: {
+      app: {
         src: [
           'gruntfile.js',
-          'app/js/**/*.js',
-          'app/test/**/*.js'
+          'js/*.js'
         ]
       }
     },
 
     watch: {
+      options: {
+        livereload: true
+      },
       scripts: {
-        files: [
-          'app/js/**/*.js',
-          'app/tests/**/*.js'
-        ],
-        tasks: ['jshint', 'karma:unit'],
-        options: {
-          spawn: false
-        }
+        files: ['js/**/*.js', 'tests/unit/*.js'],
+        tasks: ['jshint:app', 'karma:unit']
+      },
+      styles: {
+        files: ['styles/**/*.less'],
+        tasks: ['less:css']
       }
     },
 
@@ -44,12 +44,24 @@ module.exports = function (grunt) {
         browsers: ['PhantomJS'],
         logLevel: 'ERROR'
       }
+    },
+
+    less: {
+      css: {
+        options: {
+          strictImports: true
+        },
+        files: {
+          'styles/main.css': 'styles/main.less'
+        }
+      }
     }
   });
 
   grunt.registerTask('default', [
-    'jshint',
+    'jshint:app',
     'karma:unit',
+    'less:css',
     'watch'
   ]);
 };

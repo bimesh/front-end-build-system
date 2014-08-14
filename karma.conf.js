@@ -13,13 +13,13 @@ module.exports = function (config) {
 
       // list of files / patterns to load in the browser
       files: [
-        'app/lib/**/*.js',
-        'app/js/**/*.js',
-        'app/tests/**/*.js'
+        'lib/**/*.js',
+        'js/**/*.js',
+        'tests/unit/*.js'
       ],
 
       preprocessors: {
-        'app/js/**/*.js': 'coverage'
+        'js/**/*.js': 'coverage'
       },
 
       // list of files / patterns to exclude
