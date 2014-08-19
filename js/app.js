@@ -1,5 +1,8 @@
 'use strict';
 
-function App(){
-  Automation.Logger.info('hello world');
-}
+angular
+  .module('sample',[
+    'sample.navigation',
+    'sample.userProfile',
+    'sample.messaging'
+  ]);

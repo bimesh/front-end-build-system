@@ -16,10 +16,7 @@ module.exports = function (grunt) {
         reporter: require('jshint-stylish')
       },
       app: {
-        src: [
-          'gruntfile.js',
-          'js/*.js'
-        ]
+        src: ['js/*.js']
       }
     },
 
@@ -28,12 +25,15 @@ module.exports = function (grunt) {
         livereload: true
       },
       scripts: {
-        files: ['js/**/*.js', 'tests/unit/*.js'],
+        files: ['js/**/*.js', 'tests/unit/**/*.js'],
         tasks: ['jshint:app', 'karma:unit']
       },
       styles: {
         files: ['styles/**/*.less'],
         tasks: ['less:css']
+      },
+      html: {
+        files: ['index.html']
       }
     },
 
@@ -42,7 +42,7 @@ module.exports = function (grunt) {
         configFile: 'karma.conf.js',
         singleRun: true,
         browsers: ['PhantomJS'],
-        logLevel: 'ERROR'
+        logLevel: 'WARN'
       }
     },
 
@@ -55,13 +55,39 @@ module.exports = function (grunt) {
           'styles/main.css': 'styles/main.less'
         }
       }
+    },
+
+    web_server: {
+      options: {
+        cors: true,
+        port: 3000,
+        nevercache: true,
+        logRequests: true
+      },
+      foo: 'bar'
+    },
+
+    concurrent: {
+      dev: {
+        tasks: ['watch', 'web_server'],
+        options: {
+          logConcurrentOutput: true
+        }
+      }
     }
+
+//    notify_hooks: {
+//      options: {
+//        enabled: true,
+//        max_jshint_notifications: 5
+//      }
+//    }
   });
 
   grunt.registerTask('default', [
     'jshint:app',
     'karma:unit',
     'less:css',
-    'watch'
+    'concurrent:dev'
   ]);
 };

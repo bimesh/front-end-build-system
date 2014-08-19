@@ -1,0 +1,104 @@
+<!doctype html>
+<html ng-app="sample">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Front End Build System</title>
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet"/>
+</head>
+<body ng-cloak>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="HeaderCtrl">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><span ng-bind="PROJECT_NAME"></span> <span class="badge"
+                                                                                        ng-bind="CURRENT_VERSION"></span></a>
+        </div>
+        <div class="navbar-collapse collapse" ng-controller="HeaderLoginCtrl">
+            <form ng-hide="userAuthenticated" class="navbar-form navbar-right" role="form" name="headerLoginForm"
+                  ng-submit="login(loginInfo)">
+                <div class="form-group">
+                    <input type="email"
+                           required=""
+                           placeholder="Email"
+                           class="form-control"
+                           ng-model="loginInfo.username">
+                </div>
+                <div class="form-group">
+                    <input type="password"
+                           required=""
+                           placeholder="Password"
+                           class="form-control"
+                           ng-model="loginInfo.password">
+                </div>
+                <button type="submit" class="btn btn-success">Sign in</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Hello, Developer!</h1>
+
+        <p>This is a sample front end build system.</p>
+
+        <small>Go ahead and login, any email and password of password</small>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="alert alert-danger" ng-controller="MessagingCtrl" ng-show="error">
+        {{error.message}}
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Angular</h2>
+
+            <p>Angular.JS is the framework we choose to handle </p>
+            <ul class="list-group">
+                <li class="list-group-item">Two-Way Databinding</li>
+                <li class="list-group-item">Client Side Templating</li>
+                <li class="list-group-item">Routing</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h2>Testing</h2>
+
+            <p>We are using karma as the test runner for our jasmine unit tests.</p>
+        </div>
+    </div>
+
+    <div class="well" ng-controller="UserProfileCtrl" ng-show="userInfo">
+        <span class="glyphicon glyphicon-user"></span> <span class="badge">#{{userInfo.userId}}</span> <span
+            ng-bind="userInfo.userName"></span>
+        <a class="btn btn-danger" href="" ng-click="logout()">Logout</a>
+    </div>
+
+    <hr>
+
+    <footer>
+        <p>&copy; Front End Build System</p>
+    </footer>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="js/app.js"></script>
+<script src="js/Navigation.js"></script>
+<script src="js/Config.js"></script>
+<script src="js/UserProfile.js"></script>
+<script src="js/Messaging.js"></script>
+</body>
+</html>
