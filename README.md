@@ -63,3 +63,15 @@ We are using Istanbul for code coverage, and have 100% of our Angular code under
 >In software architecture, publish–subscribe is a messaging pattern where senders of messages, called publishers, do not program the messages to be sent directly to specific receivers, called subscribers. Instead, published messages are characterized into classes, without knowledge of what, if any, subscribers there may be. Similarly, subscribers express interest in one or more classes, and only receive messages that are of interest, without knowledge of what, if any, publishers there are.
 
 We are using pub/sub events to decouple the event creator from the event consumer. We are using unit tests to ensure the event "contract" is consistent.
+
+## Publish Implementation
+![Publish Implementation](/screenshots/pubsub_pub.png "")
+
+## Publish Test
+![Publish Implementation](/screenshots/pubsub_pub_test.png "")
+
+## Subscribe Implementation
+![Subscribe Implementation](/screenshots/pubsub_sub.png "")
+
+## Subscribe Test
+![Subscribe Implementation](/screenshots/pubsub_sub_test.png "")
