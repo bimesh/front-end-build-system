@@ -21,7 +21,7 @@
             <a class="navbar-brand" href="#"><span ng-bind="PROJECT_NAME"></span> <span class="badge"
                                                                                         ng-bind="CURRENT_VERSION"></span></a>
         </div>
-        <div class="navbar-collapse collapse" ng-controller="HeaderLoginCtrl">
+        <div class="navbar-collapse collapse" ng-controller="LoginCtrl">
             <form ng-hide="userAuthenticated" class="navbar-form navbar-right" role="form" name="headerLoginForm"
                   ng-submit="login(loginInfo)">
                 <div class="form-group">
@@ -81,7 +81,7 @@
 
     <div class="well" ng-controller="UserProfileCtrl" ng-show="userInfo">
         <span class="glyphicon glyphicon-user"></span> <span class="badge">#{{userInfo.userId}}</span> <span
-            ng-bind="userInfo.userName"></span>
+            ng-bind="userInfo.username"></span>
         <a class="btn btn-danger" href="" ng-click="logout()">Logout</a>
     </div>
 
@@ -103,5 +103,6 @@
 <script src="js/Config.js"></script>
 <script src="js/UserProfile.js"></script>
 <script src="js/Messaging.js"></script>
+<script src="js/Login.js"></script>
 </body>
 </html>

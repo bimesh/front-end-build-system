@@ -4,5 +4,6 @@ angular
   .module('sample',[
     'sample.navigation',
     'sample.userProfile',
-    'sample.messaging'
+    'sample.messaging',
+    'sample.login'
   ]);
