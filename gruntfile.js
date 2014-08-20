@@ -34,6 +34,10 @@ module.exports = function (grunt) {
       },
       html: {
         files: ['index.html']
+      },
+      bower: {
+        files: ['bower.json'],
+        tasks: ['wiredep']
       }
     },
 
@@ -74,17 +78,17 @@ module.exports = function (grunt) {
           logConcurrentOutput: true
         }
       }
-    }
+    },
 
-//    notify_hooks: {
-//      options: {
-//        enabled: true,
-//        max_jshint_notifications: 5
-//      }
-//    }
+    wiredep: {
+      app: {
+        src: ['index.html']
+      }
+    }
   });
 
   grunt.registerTask('default', [
+    'wiredep',
     'jshint:app',
     'karma:unit',
     'less:css',
