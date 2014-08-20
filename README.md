@@ -50,9 +50,13 @@ We are using semantic form markup using HTML5 attributes to perform form validat
 
 # [Istanbul for Code coverage](http://gotwarlost.github.io/istanbul/)
 > Yet another code coverage tool for Javascript
+
 We are using Istanbul for code coverage, and have 100% of our Angular code under test.
 
+## Overview
 ![Code Coverage Detail Overview](/screenshots/code_coverage_overview.png "Code Coverage Overview")
+
+## Detail View
 ![Code Coverage Detail View](/screenshots/code_coverage_detail.png "Code Coverage Detail View")
 
 # [Decoupled system via pub/sub](http://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)
