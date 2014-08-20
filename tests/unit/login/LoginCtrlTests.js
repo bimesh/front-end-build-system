@@ -32,9 +32,16 @@ describe('Login: Controller: LoginCtrl', function () {
   });
 
   describe('login with bad credentials', function () {
-    var loginCredentials = {username: 'test@test.com', password: 'bad-pass'};
+    var loginCredentials;
 
-    it('should not authenticated the user', function () {
+    beforeEach(function () {
+      loginCredentials = {
+        username: 'test@test.com',
+        password: 'bad-pass'
+      };
+    });
+
+    it('should not authenticate the user', function () {
       scope.login(loginCredentials);
       expect(scope.userAuthenticated).toBeFalsy();
     });
@@ -46,7 +53,14 @@ describe('Login: Controller: LoginCtrl', function () {
   });
 
   describe('login with good credentials', function () {
-    var loginCredentials = {username: 'test@test.com', password: 'password'};
+    var loginCredentials;
+
+    beforeEach(function () {
+      loginCredentials = {
+        username: 'test@test.com',
+        password: 'password'
+      };
+    });
 
     it('should authenticate the user', function () {
       scope.login(loginCredentials);
@@ -61,9 +75,9 @@ describe('Login: Controller: LoginCtrl', function () {
     it('should broadcast user logged in event', function () {
       scope.login(loginCredentials);
       expect(rootScope.$broadcast).toHaveBeenCalledWith('user:logged-in', {
-          userId: jasmine.any(Number),
-          username: loginCredentials.username
-        });
+        userId: jasmine.any(Number),
+        username: loginCredentials.username
+      });
     });
   });
 

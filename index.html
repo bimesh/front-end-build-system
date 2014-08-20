@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Front End Build System</title>
-    <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
-    <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet"/>
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
 </head>
 <body ng-cloak>
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="HeaderCtrl">
@@ -76,7 +78,9 @@
             <h2>Testing</h2>
 
             <p>We are using karma as the test runner for our jasmine unit tests.</p>
+            <p>We are using Istanbul for test code coverage.</p>
         </div>
+
     </div>
 
     <div class="well" ng-controller="UserProfileCtrl" ng-show="userInfo">

@@ -5,11 +5,11 @@ describe('Navigation: Controller: HeaderCtrl', function () {
 
   beforeEach(module('sample.navigation'));
 
-  beforeEach(function() {
+  beforeEach(function () {
     MOCK_CONFIG = {
       CURRENT_VERSION: '0.1.2',
       PROJECT_NAME: 'Front End Build System'
-    } ;
+    };
   });
 
   beforeEach(inject(function ($controller, $rootScope) {
