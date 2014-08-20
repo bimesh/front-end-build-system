@@ -31,7 +31,7 @@ We are using JSHint to ensure consistent coding practices.
 # [Grunt WireDep for auto-script including](https://github.com/stephenplusplus/grunt-wiredep)
 > Inject Bower packages into your source code with Grunt.
 
-We use wiredep to automatically inject <script> and <link> tags based on dependencies declared via Bower.
+We use wiredep to automatically inject ```<script>``` and ```<link>``` tags based on dependencies declared via Bower.
 
 # [Faster Feedback with LiveReload](http://livereload.com/)
 > a happy land where browsers don't need a Refresh button
