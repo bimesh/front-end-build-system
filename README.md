@@ -52,6 +52,9 @@ We are using semantic form markup using HTML5 attributes to perform form validat
 > Yet another code coverage tool for Javascript
 We are using Istanbul for code coverage, and have 100% of our Angular code under test.
 
+![Code Coverage Detail Overview](/screenshots/code_coverage_overview.png "Code Coverage Overview")
+![Code Coverage Detail View](/screenshots/code_coverage_detail.png "Code Coverage Detail View")
+
 # [Decoupled system via pub/sub](http://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)
 >In software architecture, publish–subscribe is a messaging pattern where senders of messages, called publishers, do not program the messages to be sent directly to specific receivers, called subscribers. Instead, published messages are characterized into classes, without knowledge of what, if any, subscribers there may be. Similarly, subscribers express interest in one or more classes, and only receive messages that are of interest, without knowledge of what, if any, publishers there are.
 
